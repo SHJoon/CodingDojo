@@ -1,0 +1,54 @@
+* {
+  margin: 0px;
+  padding: 0 auto;
+}
+
+#container {
+  width: 970px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: gray;
+  color: white;
+  border: 2px solid black;
+  padding: 15px;
+}
+/* 
+[ ] style header
+[ ] move the title to the left and link to the right
+[ ] put picture on the left next to the bio title
+
+*/
+
+header h1 {
+  display: inline-block;
+  margin-right: 500px;
+}
+
+#title {
+  color: red;
+}
+
+#this-title {
+  color: purple;
+}
+
+#bio-pic {
+  width: 30%;
+}
+
+#bio-section {
+  display: inline-block;
+  margin-right: 200px;
+  width: 50%;
+}
+
+#bio-title {
+  color: lightcoral;
+}
+
+.bio,
+#bottom-section p {
+  font-family: fantasy;
+}
