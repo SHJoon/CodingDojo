@@ -12,13 +12,13 @@ oneto255();
 // from 1 to 1000.  You may use a modulus operator for this exercise.
 
 function evenNumSum() {
-    sum = 0;
-    for(var i=1;i<=1000;i++){
-        if(i % 2 == 0){
-            sum += i;
-        } 
+  sum = 0;
+  for (var i = 1; i <= 1000; i++) {
+    if (i % 2 == 0) {
+      sum += i;
     }
-    console.log(sum);
+  }
+  console.log(sum);
 }
 evenNumSum();
 
@@ -26,70 +26,67 @@ evenNumSum();
 // 1 to 5000. (e.g. 1+3+5+...+4997+4999).
 
 function oddNumSum() {
-    sum = 0;
-    for(var i=1;i<=5000;i++){
-        if(i % 2 == 1){
-            sum += i;
-        } 
+  sum = 0;
+  for (var i = 1; i <= 5000; i++) {
+    if (i % 2 == 1) {
+      sum += i;
     }
-    console.log(sum);
+  }
+  console.log(sum);
 }
 oddNumSum();
-
 
 // 4.Iterate an array - Write a function that returns the sum of all the values within
 // an array. (e.g. [1,2,5] returns 8. [-5,2,5,12] returns 14).
 
 function arraySum(arr) {
-    var sum = 0;
-    for(var i = 0; i < arr.length; i++){
-        sum += arr[i];
-    }
-    return sum;
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
 }
-var myArr = [1,2,5];
+var myArr = [1, 2, 5];
 arrSum = arraySum(myArr);
 console.log(arrSum);
-
 
 // 5.Find max - Given an array with multiple values, write a function that returns the
 // maximum number in the array. (e.g. for [-3,3,5,7] max is 7)
 
 function arraySum(arr) {
-    var max = arr[0];
-    for(var i = 0; i < arr.length; i++){
-        sum += arr[i];
-    }
-    return sum;
+  var max = arr[0];
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
 }
-var myArr = [-3,3,5,7];
+var myArr = [-3, 3, 5, 7];
 arrMax = arrayMax(myArr);
 console.log(arrMax);
-
 
 // 6.Find average - Given an array with multiple values, write a function that returns
 // the average of the values in the array. (e.g. for [1,3,5,7,20] average is 7.2)
 
-function arrayAvg(arr){
-    sum = 0;
-    for(var i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return (sum/arr.length);
+function arrayAvg(arr) {
+  sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
 }
-var myArr = [1,3,5,7,20];
+var myArr = [1, 3, 5, 7, 20];
 arrAvg = arrayAvg(myArr);
 console.log(arrAvg);
 
 // 7.Array odd - Write a function that would return an array of all the odd numbers
 // between 1 to 50. (ex. [1,3,5, .... , 47,49]). Hint: Use 'push' method.
 
-function arrayOdd(){
-    var arr = [];
-    for(var i =1; i <= 50; i+=2){
-        arr.push(i);
-    }
-    return arr;
+function arrayOdd() {
+  var arr = [];
+  for (var i = 1; i <= 50; i += 2) {
+    arr.push(i);
+  }
+  return arr;
 }
 console.log(arrayOdd());
 
@@ -97,29 +94,28 @@ console.log(arrayOdd());
 // the number of values that are greater than Y. For example if arr = [1, 3, 5, 7] and Y = 3,
 // your function will return 2. (There are two values in the array greater than 3, which are 5, 7).
 
-function greaterThan(arr, Y){
-    count = 0;
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] > Y){
-            count++;
-        }
+function greaterThan(arr, Y) {
+  count = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > Y) {
+      count++;
     }
-    return count;
+  }
+  return count;
 }
-myArr = [1,3,5,7];
+myArr = [1, 3, 5, 7];
 console.log(greaterThan(myArr, 3));
-
 
 // 9.Squares - Given an array with multiple values, write a function that replaces each
 // value in the array with the value squared by itself. (e.g. [1,5,10,-2] will become [1,25,100,4])
 
 function squareArray(arr) {
-    for(var i = 0; i < arr.length; i++){
-        arr[i] = arr[i] * arr[i];
-    }
+  for (var i = 0; i < arr.length; i++) {
+    arr[i] = arr[i] * arr[i];
+  }
 }
 
-myArr = [1,5,10,-2];
+myArr = [1, 5, 10, -2];
 squareArray(myArr);
 console.log(myArr);
 
@@ -128,14 +124,14 @@ console.log(myArr);
 // contain no negative values. (e.g. [1,5,10,-2] will become [1,5,10,0])
 
 function noNegative(arr) {
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] <= 0){
-            arr[i] = 0;
-        }
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] <= 0) {
+      arr[i] = 0;
     }
+  }
 }
 
-myArr = [1,5,10,-2];
+myArr = [1, 5, 10, -2];
 noNegative(myArr);
 console.log(myArr);
 
@@ -144,37 +140,36 @@ console.log(myArr);
 // (e.g. [1,5,10,-2] will return [10,-2,3.5])
 
 function maxMinAvg(arr) {
-    min = arr[0];
-    max = arr[0];
-    sum = 0;
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] > max){
-            max = arr[i];
-        }
-        if(arr[i] < min){
-            min = arr[i];
-        }
-        sum += arr[i];
+  min = arr[0];
+  max = arr[0];
+  sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
     }
-    newArr = [max, min, sum/arr.length];
-    return newArr;
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    sum += arr[i];
+  }
+  newArr = [max, min, sum / arr.length];
+  return newArr;
 }
 
-myArr = [1,5,10,-2];
+myArr = [1, 5, 10, -2];
 newArray = maxMinAvg(myArr);
 console.log(newArray);
-
 
 // 12.Swap Values - Write a function that will swap the first and last values of any given
 // array. The default minimum length of the array is 2. (e.g. [1,5,10,-2] will become [-2,5,10,1]).
 
-function swapValues(arr){
-    temp = arr[0];
-    arr[0] = arr[arr.length-1];
-    arr[arr.length-1] = temp;
+function swapValues(arr) {
+  temp = arr[0];
+  arr[0] = arr[arr.length - 1];
+  arr[arr.length - 1] = temp;
 }
 
-myArr = [1,5,10,-2];
+myArr = [1, 5, 10, -2];
 swapValues(myArr);
 console.log(myArr);
 
@@ -182,14 +177,14 @@ console.log(myArr);
 // negative values within the array with the string 'Dojo'. For example if array = [-1,-3,2],
 // your function will return ['Dojo','Dojo',2].
 
-function numtoString(arr){
-    for(var i = 0; i < arr.length; i++){
-        if(arr[i] < 0){
-            arr[i] = 'Dojo';
-        }
+function numtoString(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] < 0) {
+      arr[i] = "Dojo";
     }
+  }
 }
 
-myArr = [-1,-3,2];
+myArr = [-1, -3, 2];
 numtoString(myArr);
 console.log(myArr);
