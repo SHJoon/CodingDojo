@@ -73,7 +73,7 @@ var myStr = "hello";
 console.log(reverseString(myStr));
 
 // str: "hello"
-// revStr:"" -> "o" -> "ol" -> "oll" -> "olle" -> "olleh"
+// reverseStr:"" -> "o" -> "ol" -> "oll" -> "olle" -> "olleh"
 // i: 4 -> 3 -> 2 -> 1 -> 0 -> -1
 
 // output: ojoDgnidoC
