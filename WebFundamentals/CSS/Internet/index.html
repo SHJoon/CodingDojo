@@ -18,7 +18,7 @@
         </div>
 
         <div id="side-bar">
-            <div id="top-bar"></div>
+            <div id="top-bar">
                 <p>So, what's an <span>Internet?</span></p>
                 <p>An <span class="blue">Inter</span>connected <span class="blue">Net</span>
                     work of computers all around the world!</p>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div id="main-header">
+        <div id="info-header">
             <img src="images/home.png" alt="home">
             <p>DNS</p>
             <div id="contact">
@@ -43,9 +43,57 @@
                 <p id="num">855.967.3787</p>
                 <p>International +1.617.963.0555</p>
             </div>
+        </div>
+
+        <div id="main-content">
+            <div class="content">
+                <p class="content-header">Clients and Servers</p>
+                <p>
+                    Computers connected to the <span>Web</span> are called
+                <h4>clients</h4> and <h4>servers.</h4>
+                <ul>
+                    <li><span>Clients</span> are the typical Web user's Internet-connected devices (for example, your
+                        computer
+                        connected to your Wi-Fi, or your phone connected to your mobile network) and <span>Web-accessing
+                            software</span> available on those devices (usually a web browser like Firefox or Chrome).
+                    </li>
+                    <li><span>Servers</span> are computers that store <span>webpages</span>,<span>sites</span>, or
+                        <span>apps</span>. Wehn a client device wants to access a webpage, a copy of the webpage is
+                        downloaded
+                        from the server onto the client machine to be displayed in the user' web browser.</li>
+                </ul>
+                </p>
+            </div>
+
+            <img src="images/client_server.jpg" alt="client">
+
+            <div class="content">
+                <p class="content-header">So What Actually Happens?</p>
+                <ol>
+                    <li>The browser goes to the <span>DNS server</span> and finds the real address of the
+                        <span>server</span> that the website lives on.</li>
+                    <li>The browser sends an <span>HTTP request</span> message to the server asking it to send a copy of
+                        the
+                        website to the slient.</li>
+                    <li>If the server approves the client's request, the server sends the client a <span>"200 OK"
+                            message,</span> which means "Permission granted! Here you go!", and then starts sending the
+                        website'sfiles to the browser as a series of small chunks.</li>
+                    <li>The browser assembles the small chunks into a complete website and displays it to you!</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="bottom-content">
+            <img src="images/html.png" alt="html">
+            <p class="content-header">The Big 3 - HTML, CSS, Javascript</p>
+            <p>While the server can process information in many different languages, the files that they serve to the
+                client are always going to be some combination of HTML, CSS, and Javascript!</p>
+            <p>Learn more about the Big 3 <a href="#"><span>here</span></a>!</p>
 
         </div>
     </div>
+
+
 </body>
 
 </html>
