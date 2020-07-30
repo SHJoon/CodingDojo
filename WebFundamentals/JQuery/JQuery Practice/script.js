@@ -5,12 +5,10 @@ $(document).ready(function () {
     $(this).css("color", color);
 
     // .text(text) as a setter
-    console.log("I'm at line 13")
-    $("#Howard").text("The text is changed after a click");
+    $("#Howard").html("<p>The text is changed after a click</p>");
 
     // .text() as a getter
     var titleText = $(this).text();
-    console.log("I'm at line 9")
     $("#Madhu").append("<p>" + titleText + "</p>"); 
   });
 

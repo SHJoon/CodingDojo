@@ -50,31 +50,30 @@ console.log(myArr);
 
 // var exampleArr = [4,2,1,3,5];
 // output: exampleArr = [1,4,2,3,5];
-function minToFront(arr){
-  var min=arr[0];
-  var position=0;
-  for (var i=0; i<arr.length; i++){
-    if (min>arr[i]){
-      min=arr[i];
+function minToFront(arr) {
+  var min = arr[0];
+  var position = 0;
+
+  // Following for loop finds the minimum value and its index.
+  for (var i = 0; i < arr.length; i++) {
+    if (min > arr[i]) {
+      min = arr[i];
       position = i;
     }
   }
 
-//   example = [4,2,1,3,5];
-//   output: example = [1,4,2,3,5];
-//   for (var j=0; j<position; j++){
-//     arr[j]=arr[j+1];
-//   }
-  for (var j=position; j>0; j--){
-    arr[j]=arr[j-1];
-  }
-//   j = 2 -> 1 -> 0 -> exit the loop
-//   example = [4,2,1,3,5] -> [4,2,2,3,5] -> [4,4,2,3,5];
 
-  arr[0]=min;
-//   [4,4,2,3,5] -> [min, 4,2,3,5] -> [1,4,2,3,5]
+//  Table for the for loop below
+//  j = 2 -> 1 -> 0 -> exit the loop
+//  example = [4,2,1,3,5] -> [4,2,2,3,5] -> [4,4,2,3,5];
+  for (var j = position; j > 0; j--) {
+    arr[j] = arr[j - 1];
+  }
+
+  //   [4,4,2,3,5] -> [min, 4,2,3,5] -> [1,4,2,3,5]
+  arr[0] = min;
+
   return arr;
 }
-minToFront([4,2,1,3,5]);
+minToFront([4, 2, 1, 3, 5]);
 //[4,2,1,3,5] --> [4,4,2,3,5]
-//
