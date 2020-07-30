@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#jquery {
+  display: none;
+}
+
+.example {
+  background-color: lightblue;
+}
+
+#sentence-block {
+  border: solid 2px black;
+}
+
+#slide-block {
+  border: solid 2px red;
+}
+
+#fade-block {
+  border: solid 2px blue;
+}
+
+#add-block {
+  border: solid 2px purple;
+}
+
+#attribute-block {
+  border: solid 2px teal;
+}

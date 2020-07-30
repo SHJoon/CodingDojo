@@ -1,4 +1,27 @@
 * {
     margin:0px;
     padding:0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#container{
+    width: 970px;
+    padding: 0px 50px;
+    align-items: center;
+}
+
+#header img{
+    width:10%;
+    display:inline-block;
+}
+#header h1{
+    display:inline-block;
+    font-size: 45px;
+}
+#header span{
+    color: rgb(34,101,158);
+}
+#header p{
+    background-color: rgb(67,122,168);
+    font-size: 30px;
+    color: white;
 }
