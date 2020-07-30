@@ -28,6 +28,16 @@ function removeAt(arr, n) {
 var myArr = [5, 3, 4, 6, 8, 9];
 console.log(removeAt(myArr, 2));
 console.log(myArr);
+//         arr=[5, 3, 4, 6, 8, 9], n=2
+//              0  1  2  3  4  5
+//temp=arr[2] = 4
+// i=2 , i<5
+//i=2, arr[2]=arr[2+1]=6, arr=[5, 3, 6, 6, 8, 9]
+//i=3, arr[3]=arr[3+1]=8, arr=[5, 3, 6, 8, 8, 9]
+//i=4, arr[4]=arr[4+1]=9, arr=[5, 3, 6, 8, 9, 9]
+//i=5
+//arr=[5, 3, 6, 8, 9, 9]-->[5, 3, 6, 8, 9]
+//4
 
 /* 
   Array: Min to Front
@@ -50,8 +60,8 @@ function minToFront(arr){
     }
   }
 
-  example = [4,2,1,3,5];
-  output: example = [1,4,2,3,5];
+//   example = [4,2,1,3,5];
+//   output: example = [1,4,2,3,5];
 //   for (var j=0; j<position; j++){
 //     arr[j]=arr[j+1];
 //   }
