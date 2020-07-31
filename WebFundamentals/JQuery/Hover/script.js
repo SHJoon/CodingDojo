@@ -12,5 +12,7 @@ $(document).ready(function () {
         $(this).removeAttr("temp")
     })
 
+    $("img").hover(function(){}, function(){})
+
 
 });
