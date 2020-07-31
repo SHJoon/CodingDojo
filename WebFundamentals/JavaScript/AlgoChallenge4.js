@@ -43,9 +43,6 @@ function secondLargest(arr) {
 
     // Compare rest of array
     for (var i = 2; i < arr.length; i++) {
-        console.log("max:" + max);
-        console.log("nextMax:"+nextMax);
-        console.log("arr[i]:"+arr[i]);
       if (arr[i] > max) {
         // max = 1;                    // max = 40 -> 50;
         // nextMax = 0;                    // nextMax = 20 -> 40;
@@ -56,10 +53,10 @@ function secondLargest(arr) {
         // max = 4;
         // nextMax = 1;
       }
-                                                            // max = 40
-                                                            // nextMax = 20 -> 30
-                                                            // arr[i] = 30
-      else if(arr[i] > nextMax) {
+        // max = 40
+        // nextMax = 20 -> 30
+        // arr[i] = 30
+      else if(arr[i] > nextMax  && arr[i] != max) {
         nextMax = arr[i];
       }
     }

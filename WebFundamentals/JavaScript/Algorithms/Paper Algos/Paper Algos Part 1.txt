@@ -32,9 +32,9 @@ for(var i=0; i<5; i++)
 }
 
 
-Prediction:
+Prediction:3,7
 
-Output:
+Output:3,7
 
 -----------------------------------------------------------
 var x=15;
@@ -48,9 +48,9 @@ foo();
 console.log(x);
 
 
-Prediction:
+Prediction:15,15,10,15
 
-Output:
+Output:15,15,10,15
 
 -----------------------------------------------------------
 for(var i=0; i<15; i+=2){
@@ -58,9 +58,9 @@ for(var i=0; i<15; i+=2){
 }
 
 
-Prediction:
+Prediction:0,2,4,6,8,10,12,14
 
-Output:
+Output:0,2,4,6,8,10,12,14
 
 -----------------------------------------------------------
 for(var i=0; i<3; i++){
@@ -70,14 +70,14 @@ for(var i=0; i<3; i++){
 }
 
 
-Prediction:
+Prediction:0,0,0,1,0,2
 
-Output:
+Output:0,0,0,1,0,2
 
 -----------------------------------------------------------
 function foo(x,y){
    for(var i=0; i<x; i++){
-      for(var j=0; j<x; j++){         
+      for(var j=0; j<x; j++){      
           console.log(i*j);
       } 
    }
@@ -86,9 +86,9 @@ var z = foo(3,3);
 console.log(z);
 
 
-Prediction:
+Prediction:0,0,0,0,1,2,0,2,4,undefined
 
-Output:
+Output:0,0,0,0,1,2,0,2,4,undefined
 
 -----------------------------------------------------------
 function foo(x,y){
@@ -103,8 +103,8 @@ var z = foo(3,5);
 console.log(z);
 
 
-Prediction:
+Prediction:0,0,0,0,0,0,1,2,3,4,0,2,4,6,8,15
 
-Output:
+Output:0,0,0,0,0,0,1,2,3,4,0,2,4,6,8,15
 
 -----------------------------------------------------------
