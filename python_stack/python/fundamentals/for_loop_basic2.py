@@ -59,7 +59,7 @@ print(average([1,2,3,4]))
 #     Example: length([]) should return 0
 def length(lst):
     count = 0
-    for num in lst:
+    for _ in lst:
         count += 1
     return count
 
