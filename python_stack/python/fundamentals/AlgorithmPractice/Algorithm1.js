@@ -28,6 +28,8 @@ console.log(caseInsensitiveStringCompare("this", "that"));
  * @return {String} first letter of each "word" capitalized
  */
 
+
+
 function acronyms(str) {
   // your code here
   var strArr = str.split(" "); //["there's", "no", "free", "lunch", "-", "gotta", "pay", "yer", "way."]
