@@ -100,7 +100,7 @@ function bracesValid(str) {
             }
         }
     }
-    return true
+    return open_braces.length == 0;
 }
   console.log(bracesValid('{[()]}')); // should log true
   console.log(bracesValid('{[()}]')); // should log false
