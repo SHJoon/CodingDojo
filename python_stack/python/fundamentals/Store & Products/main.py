@@ -1,13 +1,13 @@
-import store
-import product
+from store import Store
+from product import Product
 
-target = store.Store("Target")
+target = Store("Target")
 
-milk = product.Product("milk", 1, "food")
-egg = product.Product("egg", 2, "food")
-camera = product.Product("camera", 100, "tech")
-chair = product.Product("chair", 30, "furniture")
-table = product.Product("table", 200, "furniture")
+milk = Product("milk", 1, "food")
+egg = Product("egg", 2, "food")
+camera = .Product("camera", 100, "tech")
+chair = Product("chair", 30, "furniture")
+table = .Product("table", 200, "furniture")
 
 target.add_product(milk)
 target.add_product(egg)
