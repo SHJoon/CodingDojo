@@ -7,7 +7,7 @@ def randInt(min = 0, max = 100):
         return False
 
     num = random.random() * (max - min) + min
-    return num
+    return round(num)
 
 
 print(randInt())            # should print a random integer between 0 to 100
