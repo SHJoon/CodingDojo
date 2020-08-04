@@ -5,9 +5,9 @@ target = Store("Target")
 
 milk = Product("milk", 1, "food")
 egg = Product("egg", 2, "food")
-camera = .Product("camera", 100, "tech")
+camera = Product("camera", 100, "tech")
 chair = Product("chair", 30, "furniture")
-table = .Product("table", 200, "furniture")
+table = Product("table", 200, "furniture")
 
 target.add_product(milk)
 target.add_product(egg)
