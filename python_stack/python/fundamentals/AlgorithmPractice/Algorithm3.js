@@ -19,9 +19,9 @@ function isPalindrome(str) {
     // 'c', 'c'
     // 'e'
     for (var i = 0; i < str.length/2; i++){
-      if (str[i] != str[str.length-1-i]) {
-          return false;
-      }
+        if (str[i] != str[str.length-1-i]){
+            return false;
+        }
     }
     return true;
   }
