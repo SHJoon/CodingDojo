@@ -15,7 +15,7 @@ def say(name):
     print(name)
     return "Hi " + name.capitalize() + "!"
 
-@app.route('/repeat/<num>/<word>')
+@app.route('/repeat/<int:num>/<word>')
 def repeat(num, word):
     myStr = ""
     for i in range(int(num)):
@@ -27,6 +27,10 @@ def show_user_profile(username, id):
     print(username)
     print(id)
     return "username: " + username + ", id: " + id
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return "Sorry! No response. Try again.", 404
 
 if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
     app.run(debug=True)    # Run the app in debug mode.
