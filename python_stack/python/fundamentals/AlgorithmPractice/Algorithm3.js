@@ -38,15 +38,16 @@ function isPalindrome(str) {
    */
   
   function longestPalindrome(str) {
-    // your code here
-    prevPalindrome = currPalindrome = '';
+    var prevPalindrome = currPalindrome = '';
+    // i sets lower bound of the string
     for(var i = 0; i < str.length; i++){
-        for(var j = i; j < str.length; j++){
+        // j sets the upper bound of the string
+        for(var j = str.length; j >= i; j--){
             if(isPalindrome(str.slice(i,j))){
-                currPalindrome = str.slice(i,j);
-                if(prevPalindrome.length < currPalindrome.length){
-                    prevPalindrome = currPalindrome;
+                if(prevPalindrome.length < str.slice(i,j).length){
+                    prevPalindrome = str.slice(i,j);
                 }
+                break;
             }
         }
     }
