@@ -7,14 +7,12 @@
 
 function join(arr, separator) {
     var arrStr = ""
-    for (var i=0; i<arr.length; i++){
-      if (i == arr.length - 1){
-        arrStr += arr[i]
-      }
-      else {
-      arrStr += arr[i] + separator
-      }
+    var lastInd = arr.length - 1
+    for (var i=0; i<lastInd; i++){
+      arrStr += arr[i] + separator;
     }
+    arrStr += arr[lastInd];
+    
     return arrStr
   }
   // create an empty string variable
@@ -114,7 +112,7 @@ function bookIndex(arr) {
                     firstnum = arr[i + 1];
                 }
             }
-            // separates the strings, rather than first index/last index.
+            // This else statement means the index is currently not last
             else{
                 // Checks if the index is single, non-consecutive.
                 if(firstnum == lastnum){
