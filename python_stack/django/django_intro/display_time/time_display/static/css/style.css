@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    width: 500px;
+    text-align: center;
+}
+    #title {
+        width: 300px;
+        height: 100px;
+        margin: 100px;
+        background-color: aliceblue;
+        border: solid 2px black;
+        font-size: 40px;
+    }
+    p {
+        width: 500px;
+        background-color: beige;
+        border: solid 4px black;
+        font-size: 30px;
+    }
