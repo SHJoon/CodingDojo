@@ -11,7 +11,7 @@ function invertHash(obj) {
     // your code here
     var newObj = {}
     for (key in obj){
-        newObj['example_key'] = 'example_val'
+        // newObj['example_key'] = 'example_val'
        newObj[ obj[key] ] = key
 
     //    newObj[ "George" ] = monkey
@@ -94,6 +94,10 @@ function invertHash(obj) {
   }
   // should log { some: 'other', thing: 'stuff' }
   // keys: arr1[i] 
+// keys: arr1[i] 
+// keys: arr1[i] 
+// keys: arr1[i] 
+// keys: arr1[i] 
 // keys: arr1[i] 
 // keys: arr1[i] 
 // keys: arr1[i] 

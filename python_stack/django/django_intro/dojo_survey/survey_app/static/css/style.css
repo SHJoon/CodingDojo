@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    margin: 50px 500px;
+    width: 300px;
+    background-color: aliceblue;
+    text-align: center;
+    border: solid 5px green;
+}
+p{
+    margin: 10px;
+    font-style: italic;
+}
