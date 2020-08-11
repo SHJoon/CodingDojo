@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> User Template </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="container">
+        <div id="top-half">
+            <h1> All the Users </h1>
+            <table>
+                <tr>
+                    <th> ID </th>
+                    <th> Name </th>
+                    <th> Email </th>
+                    <th> Age </th>
+                </tr>
+                <!-- For loop here -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <form action="/store" method="POST">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age">
+
+            <button> Add </button>
+        </form> 
+    </div>
+</body>
+</html>
