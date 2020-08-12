@@ -1,0 +1,44 @@
+#container {
+    width: 700px;
+    margin-left: 300px;
+    text-align: center;
+    align-items: center;
+}
+
+#database-table{
+    width:100%;
+}
+#database-table td, th{
+    margin:0px;
+    padding:0px;
+    border:solid 1px black;
+}
+#database-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#database-table tr:hover {
+    background-color: #ddd;
+}
+
+#database-table th {
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+#lower-half{
+    width: 100%;
+    margin-top: 20px;
+    border-top: solid 1px black;
+}
+form{
+    width: 600px;
+    margin: 20px 70px;
+}
+
+form *{
+    margin: 10px;
+}
+#user-input{
+    width: 100%;
+    text-align: left;
+}

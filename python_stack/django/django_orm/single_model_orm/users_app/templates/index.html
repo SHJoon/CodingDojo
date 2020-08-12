@@ -11,7 +11,7 @@
     <div id="container">
         <div id="top-half">
             <h1> All the Users </h1>
-            <table>
+            <table id="database-table">
                 <tr>
                     <th> ID </th>
                     <th> Name </th>
@@ -19,27 +19,39 @@
                     <th> Age </th>
                 </tr>
                 <!-- For loop here -->
+                {% for user in all_users %}
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td> {{ user.id }} </td>
+                    <td> {{ user.first_name }} {{ user.last_name }} </td>
+                    <td> {{ user.email_address }} </td>
+                    <td> {{ user.age }}</td>
                 </tr>
+                {% endfor %}
             </table>
         </div>
 
-        <form action="/store" method="POST">
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname">
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email">
-            <label for="age">Age:</label>
-            <input type="text" id="age" name="age">
+        <div id="lower-half">
+            <h1> Add a User </h1>
+            <form action="/store" method="POST">
+                {% csrf_token %}
+                <table id="user-input">
+                    <tr>
+                        <td>First name: </td>
+                        <td><input type="text" id="fname" name="fname"></td>
+                        <td>Last name: </td>
+                        <td><input type="text" id="lname" name="lname"></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="text" id="email" name="email"></td>
+                        <td>Age: </td>
+                        <td><input type="text" id="age" name="age"></td>
+                    </tr>
 
-            <button> Add </button>
-        </form> 
+                </table>
+                <button> Add </button>
+            </form> 
+        </div>
     </div>
 </body>
 </html>
