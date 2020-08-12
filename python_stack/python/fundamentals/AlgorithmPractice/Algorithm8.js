@@ -62,25 +62,29 @@ function encode(str) {
   //       newStr += fre;
   //   }
   function decode(str) {
-    var newStr="", freStr="", fre=0, prevChar = str[0];
+    var newStr="", freqStr="", currChar = str[0];
     for (var i = 1; i<=str.length; i++){
+      // Check if the character is number or not
       if (isNaN(str[i])){
-        for(var j = 0; j < parseInt(freStr); j++){
-            newStr +=  prevChar;
+        // If current character is not a number, we look at how many times
+        // we have to loop(freqStr) to add the current character (str[i])
+        for(var j = 0; j < parseInt(freqStr); j++){
+            newStr +=  currChar;
         }
-        prevChar = str[i];
-        freStr="";
+        currChar = str[i];
+        freqStr="";
       }
       else {
-        freStr += str[i];
+        // If current character is a number, add the string to the freqStr
+        freqStr += str[i];
       }
     }
 
     return newStr;
   }
 
-  console.log(decode('a2b6')); // should log 'aabbbbbb'
-  console.log(decode('a10b10')); // should log 'abbbbbbbbbb'
+  console.log(decode('a2b6c7')); // should log 'aabbbbbbccccccc'
+  console.log(decode('a10b10')); // should log 'aaaaaaaaaabbbbbbbbbb'
   // loop 1: newStr = a
   // loop 2: newStr = a, freStr="1"
   // loop 3: newStr = a, freStr="10"
