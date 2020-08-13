@@ -1,0 +1,34 @@
+* {
+    /* border:solid 1px black; */
+}
+
+#container{
+    width: 900px;
+    margin-left: 300px;
+}
+
+#top-half{
+    width: 900px;
+    margin: 20px 0px;
+    border-bottom: 1px solid black;
+}
+
+#add-dojo , #add-ninja{
+    width: 400px;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+}
+table{
+    margin-left: 70px;
+}
+
+ul{
+    margin-left: 300px;
+}
+#bottom-half button, h3{
+    display:inline-block;
+}
+li{
+    list-style: inside;
+}

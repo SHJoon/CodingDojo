@@ -6,8 +6,8 @@ Commands
 
 Output
 #	id	name	city	    state
-1	1	LA Dojo	Los Angeles	CA
-2	2	SJ Dojo	San Jose	CA
+1	1	LA Dojo	Los Angeles CA
+2	2	SJ Dojo	San Jose    CA
 3	3	DL Dojo	Dallas	    TX
 
 ----------------------------------------------------------------
@@ -31,8 +31,8 @@ Commands
 
 Output
 #	id	name	city	    state
-1	4	LA Dojo	Los Angeles	CA
-2	5	SJ Dojo	San Jose	CA
+1	4	LA Dojo	Los Angeles CA
+2	5	SJ Dojo	San Jose    CA
 3	6	DL Dojo	Dallas	    TX
 ----------------------------------------------------------------
 Query: Create 3 ninjas that belong to the first dojo
@@ -43,9 +43,9 @@ Commands
 
 Output
 #	id	first_name	last_name	dojo_id_id
-1	1	Howard	    Shin	    4
-2	2	Robert	    Hernandez	4
-3	3	Danny	    Vega	    4
+1	1	Howard	    	Shin	    	4
+2	2	Robert	    	Hernandez	4
+3	3	Danny	    	Vega	    	4
 ----------------------------------------------------------------
 Query: Create 3 ninjas that belong to the second dojo
 Commands
@@ -55,12 +55,12 @@ Commands
 
 Output
 #	id	first_name	last_name	dojo_id_id
-1	1	Howard	    Shin	    4
-2	2	Robert	    Hernandez	4
-3	3	Danny	    Vega	    4
-4	4	John	    Doe	        5
-5	5	Jane	    Doe	        5
-6	6	Mark	    Karm	    5
+1	1	Howard	    	Shin	    	4
+2	2	Robert	    	Hernandez	4
+3	3	Danny	    	Vega	    	4
+4	4	John	    	Doe	        5
+5	5	Jane	    	Doe	        5
+6	6	Mark	    	Karm	    	5
 ----------------------------------------------------------------
 Query: Create 3 ninjas that belong to the third dojo
 Commands
@@ -70,15 +70,15 @@ Commands
 
 Output
 #	id	first_name	last_name	dojo_id_id
-1	1	Howard	    Shin	    4
-2	2	Robert	    Hernandez	4
-3	3	Danny	    Vega	    4
-4	4	John	    Doe	        5
-5	5	Jane	    Doe	        5
-6	6	Mark	    Karm	    5
-7	7	Barack	    Obama	    6
-8	8	Donald	    Trump	    6
-9	9	George	    Washington	6
+1	1	Howard	    	Shin	    	4
+2	2	Robert	    	Hernandez	4
+3	3	Danny	    	Vega	    	4
+4	4	John	    	Doe	        5
+5	5	Jane	    	Doe	        5
+6	6	Mark	    	Karm	    	5
+7	7	Barack	    	Obama	    	6
+8	8	Donald	    	Trump	    	6
+9	9	George	    	Washington	6
 ----------------------------------------------------------------
 Query: Retrieve all the ninjas from the first dojo
 Commands
@@ -121,6 +121,6 @@ Output
 #	id	name	        city	    state	desc
 1	4	LA Dojo	        Los Angeles	CA	    NULL
 2	5	SJ Dojo	        San Jose	CA	    NULL
-3	6	DL Dojo	        Dallas	    TX	    NULL
+3	6	DL Dojo	        Dallas	        TX	    NULL
 4	7	Howard's Dojo	Chatsworth	CA	    This is Howard's dojo.
 ----------------------------------------------------------------
