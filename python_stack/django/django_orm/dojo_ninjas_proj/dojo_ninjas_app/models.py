@@ -5,6 +5,7 @@ class Dojo(models.Model):
     name = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=2)
+    desc = models.TextField(null=True)
 
 class Ninja(models.Model):
     first_name = models.CharField(max_length=255)
@@ -12,6 +13,6 @@ class Ninja(models.Model):
 
     dojo_id = models.ForeignKey(
         Dojo,
-        related_name = "ninja",
+        related_name = "ninjas",
         on_delete = models.CASCADE
     )

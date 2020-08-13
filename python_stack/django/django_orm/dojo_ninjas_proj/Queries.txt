@@ -1,45 +1,126 @@
 Query: Create 3 new dojos
+Commands
+>>> LosAng = Dojo.objects.create(name="LA Dojo", city="Los Angeles", state="CA")
+>>> SanJos = Dojo.objects.create(name="SJ Dojo", city="San Jose", state="CA") 
+>>> Dall = Dojo.objects.create(name="DL Dojo", city="Dallas", state="TX")
 
-
+Output
+#	id	name	city	    state
+1	1	LA Dojo	Los Angeles	CA
+2	2	SJ Dojo	San Jose	CA
+3	3	DL Dojo	Dallas	    TX
 
 ----------------------------------------------------------------
 Query: Delete the 3 dojos you just created
+Commands
+>>> LosAng.delete()
+>>> SanJos.delete()
+>>> Dall.delete()
 
+Output
+(1, {'dojo_ninjas_app.Ninja': 0, 'dojo_ninjas_app.Dojo': 1})
+(1, {'dojo_ninjas_app.Ninja': 0, 'dojo_ninjas_app.Dojo': 1})
+(1, {'dojo_ninjas_app.Ninja': 0, 'dojo_ninjas_app.Dojo': 1})
 
 ----------------------------------------------------------------
 Query: Create 3 more dojos
+Commands
+>>> laDojo = Dojo.objects.create(name="LA Dojo", city="Los Angeles", state="CA")
+>>> sjDojo = Dojo.objects.create(name="SJ Dojo", city="San Jose", state="CA") 
+>>> daDojo = Dojo.objects.create(name="DL Dojo", city="Dallas", state="TX")
 
-
+Output
+#	id	name	city	    state
+1	4	LA Dojo	Los Angeles	CA
+2	5	SJ Dojo	San Jose	CA
+3	6	DL Dojo	Dallas	    TX
 ----------------------------------------------------------------
 Query: Create 3 ninjas that belong to the first dojo
+Commands
+>>> howard = Ninja.objects.create(first_name="Howard", last_name="Shin", dojo_id=laDojo)
+>>> robert = Ninja.objects.create(first_name="Robert", last_name="Hernandez", dojo_id=laDojo) 
+>>> danny = Ninja.objects.create(first_name="Danny", last_name="Vega", dojo_id=laDojo)
 
-
+Output
+#	id	first_name	last_name	dojo_id_id
+1	1	Howard	    Shin	    4
+2	2	Robert	    Hernandez	4
+3	3	Danny	    Vega	    4
 ----------------------------------------------------------------
 Query: Create 3 ninjas that belong to the second dojo
+Commands
+>>> john = Ninja.objects.create(first_name="John", last_name="Doe", dojo_id=sjDojo)
+>>> jane = Ninja.objects.create(first_name="Jane", last_name="Doe", dojo_id=sjDojo)
+>>> mark = Ninja.object.create(first_name="Mark", last_name="Karm", dojo_id=sjDojo)
 
-
+Output
+#	id	first_name	last_name	dojo_id_id
+1	1	Howard	    Shin	    4
+2	2	Robert	    Hernandez	4
+3	3	Danny	    Vega	    4
+4	4	John	    Doe	        5
+5	5	Jane	    Doe	        5
+6	6	Mark	    Karm	    5
 ----------------------------------------------------------------
 Query: Create 3 ninjas that belong to the third dojo
+Commands
+>>> barack = Ninja.objects.create(first_name="Barack", last_name="Obama", dojo_id=daDojo)
+>>> donald = Ninja.objects.create(first_name="Donald", last_name="Trump", dojo_id=daDojo)
+>>> george = Ninja.objects.create(first_name="George", last_name="Washington", dojo_id=daDojo)
 
-
+Output
+#	id	first_name	last_name	dojo_id_id
+1	1	Howard	    Shin	    4
+2	2	Robert	    Hernandez	4
+3	3	Danny	    Vega	    4
+4	4	John	    Doe	        5
+5	5	Jane	    Doe	        5
+6	6	Mark	    Karm	    5
+7	7	Barack	    Obama	    6
+8	8	Donald	    Trump	    6
+9	9	George	    Washington	6
 ----------------------------------------------------------------
 Query: Retrieve all the ninjas from the first dojo
+Commands
+>>> Dojo.objects.first().ninja.all().values()
 
-
+Output
+<QuerySet [
+    {'id': 1, 'first_name': 'Howard', 'last_name': 'Shin', 'dojo_id_id': 4},
+    {'id': 2, 'first_name': 'Robert', 'last_name': 'Hernandez', 'dojo_id_id': 4},
+    {'id': 3, 'first_name': 'Danny', 'last_name': 'Vega', 'dojo_id_id': 4}
+    ]>
 ----------------------------------------------------------------
 Query: Retrieve all the ninjas from the last dojo
+Commands
+>>> Dojo.objects.last().ninja.all().values() 
 
-
+Output
+<QuerySet [
+    {'id': 7, 'first_name': 'Barack', 'last_name': 'Obama', 'dojo_id_id': 6},
+    {'id': 8, 'first_name': 'Donald', 'last_name': 'Trump', 'dojo_id_id': 6},
+    {'id': 9, 'first_name': 'George', 'last_name': 'Washington', 'dojo_id_id': 6}
+    ]>
 ----------------------------------------------------------------
 Query: Retrieve the last ninja's dojo
+Commands
+>>> Ninja.objects.last().dojo_id.__dict__ 
 
-
+Output
+{'_state': <django.db.models.base.ModelState object at 0x000001EA86C5C370>, 'id': 6, 'name': 'DL Dojo', 'city': 'Dallas', 'state': 'TX'}
 ----------------------------------------------------------------
-Add a new text field called "desc" to your Dojo class
 
+Add a new text field called "desc" to your Dojo class
 
 ----------------------------------------------------------------
 Query: Create a new dojo
+Commands
+>>> Dojo.objects.create(name="Howard's Dojo", city="Chatsworth", state="CA", desc="This is Howard's dojo.")
 
-
+Output
+#	id	name	        city	    state	desc
+1	4	LA Dojo	        Los Angeles	CA	    NULL
+2	5	SJ Dojo	        San Jose	CA	    NULL
+3	6	DL Dojo	        Dallas	    TX	    NULL
+4	7	Howard's Dojo	Chatsworth	CA	    This is Howard's dojo.
 ----------------------------------------------------------------
