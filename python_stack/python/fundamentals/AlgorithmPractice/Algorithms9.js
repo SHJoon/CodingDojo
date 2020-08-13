@@ -64,17 +64,20 @@ function rotateString(str, num) {
    */
   
   function isRotation(str1, str2) {
-    // your code here
+    // string lengths do not match
     if (str1.length != str2.length){
         return false;
     }
     
-    for(var i = 1; i < str1.length; i++){
+    for(var i = 0; i < str1.length; i++){
+        // Rotate str1 by i and compare with str2 each time
         if (rotateString(str1, i) == str2){
-            return true
+            // If the if-statement ever passes, we can exit the function with a true.
+            return true;
         }
     }
-    return false
+    // If the if-statement never passed, we exit the function with a false.
+    return false;
   }
   
   console.log(isRotation('Boris Godunov', 'dunovBoris Go'));
