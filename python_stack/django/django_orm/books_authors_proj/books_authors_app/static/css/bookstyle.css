@@ -1,0 +1,7 @@
+#container{
+    width: 900px;
+}
+
+#description p{
+    display: inline-block;
+}

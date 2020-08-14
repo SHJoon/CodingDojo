@@ -1,0 +1,36 @@
+/* * {
+    border:solid 1px black;
+} */
+#container {
+    width: 900px;
+    margin-left: 500px;
+    padding: 20px;
+}
+
+#left-side {
+    width: 250px;
+    display: inline-block;
+    margin-right: 250px;
+}
+#left-side td{
+    vertical-align: top;
+    padding-bottom: 8px;
+}
+#description {
+    width: 169px;
+    height: 50px;
+}
+#left-side button{
+    margin-left: 78px;
+}
+#right-side{
+    display:inline-block;
+    border-collapse: collapse;
+}
+#right-side tr:nth-child(even) {
+    background-color: lightgray;
+  }
+#right-side td{
+    padding: 5px;
+    border: solid 1px black;
+}
