@@ -90,7 +90,8 @@ function updateInventory(newInv, currentInv) {
 
     //loop through the string from the back
     // - If the whitespace ends, break out of the loop
-    var beginning_index, end_index;
+    var beginning_index = -1;
+    var end_index = str.length;
     if(str[0] == ' '){
         for(var i = 0; i < str.length; i++){
             if(str[i+1] != ' '){
@@ -102,14 +103,19 @@ function updateInventory(newInv, currentInv) {
 
     if(str[str.length - 1] == ' '){
         for(var i = str.length-1; i >= 0; i--){
-            if(str[i] != ' '){
+            if(str[i-1] != ' '){
                 end_index = i;
                 break;
             }
         }
     }
 
+    var newStr = ''
+    for(var i = beginning_index + 1; i < end_index; i++){
+        newStr += str[i];
+    }
 
+    return newStr;
   }
   
   console.log(trim('this   ')); // should log 'this'
