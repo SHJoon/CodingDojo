@@ -177,6 +177,7 @@ Query: Find all the authors that contributed to the 5th book
 Commands
 >>> for author in Book.objects.get(id=5).publishers.all():
 ...     print(f"{author.first_name} {author.last_name}")
+	print(author.first_name + " " + author.last_name)
 
 Output
 William Shakespeare
