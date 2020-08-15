@@ -24,8 +24,20 @@ def index(request):
 		"coopers": Player.objects.filter(last_name__exact="Cooper"),
 		"joshuas": Player.objects.filter(first_name__exact="Joshua"),
 		"coopers_no_joshua": Player.objects.filter(last_name__exact="Cooper").exclude(first_name__exact="Joshua"),
-		"alexander_wyatts": Player.objects.filter(Q(first_name__exact="Alexander") | Q(first_name__exact="Wyatt"))
-
+		"alexander_wyatts": Player.objects.filter(Q(first_name__exact="Alexander") | Q(first_name__exact="Wyatt")),
+		"atlantic_teams": Team.objects.filter(league__name__exact="Atlantic Soccer Conference"),
+		"penguins_players": Player.objects.filter(curr_team__location__exact="Boston", curr_team__team_name__exact="Penguins"),
+		"inter_colleg_baseb_confs": Player.objects.filter(curr_team__league__name__exact="International Collegiate Baseball Conference"),
+		"lopez_players": Player.objects.filter(last_name__exact="Lopez", curr_team__league__name__exact="American Conference of Amateur Football"),
+		"football_players": Player.objects.filter(curr_team__league__sport__contains="football"),
+		"sophia_teams": Team.objects.filter(curr_players__first_name__exact="Sophia"),
+		"sophia_leagues": League.objects.filter(teams__curr_players__first_name__exact="Sophia"),
+		"flores_players": Player.objects.filter(last_name__exact="Flores").exclude(curr_team__location__exact="Washington",curr_team__team_name__exact="Roughriders"),
+		"samuel_evans_teams": Team.objects.filter(all_players__first_name__exact="Samuel", all_players__last_name__exact="Evans"),
+		"tiger_cats_players": Player.objects.filter(all_teams__location__exact="Manitoba",all_teams__team_name__exact="Tiger-Cats"),
+		"vikings_players": Player.objects.filter(all_teams__location__exact="Wichita",all_teams__team_name__exact="Vikings").exclude(curr_team__location__exact="Wichita",curr_team__team_name__exact="Vikings"),
+		"jacob_gray_teams": Team.objects.filter(all_players__first_name__exact="Jacob",all_players__last_name__exact="Gray").exclude(location__exact="Oregon", team_name__exact="Colts"),
+		"amateur_baseball_joshuas": Player.objects.filter(all_teams__league__name__exact="Atlantic Federation of Amateur Baseball Players", first_name__exact="Joshua"),
 	}
 	return render(request, "leagues/index.html", context)
 

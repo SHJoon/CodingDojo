@@ -28,6 +28,8 @@
 				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
 			{% endfor %}
 		</ol>
+
+		<h1> This is beginning of Sports ORM 1 assignment </h1>
 		<p>...all baseball leagues</p>
 		<ul>
 			{% for baseball_league in baseball_leagues %}
@@ -138,6 +140,109 @@
 			{% for alexander_wyatt in alexander_wyatts %}
 			<li>{{ alexander_wyatt.first_name }} {{ alexander_wyatt.last_name }}</li>
 			{% endfor %}
+		</ul>
+		<br>
+
+		<h1> This is beginning of Sports ORM 2 assignment </h1>
+		<p>...all teams in the Atlantic Soccer Conference</p>
+		<ul>
+			{% for atlantic_team in atlantic_teams %}
+			<li>{{ atlantic_team.location }} {{ atlantic_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all (current) players on the Boston Penguins</p>
+		<ul>
+			{% for penguins_player in penguins_players %}
+			<li>{{ penguins_player.first_name }} {{ penguins_player.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all (current) players in the International Collegiate Baseball Conference</p>
+		<ul>
+			{% for inter_colleg_baseb_conf in inter_colleg_baseb_confs %}
+			<li>{{ inter_colleg_baseb_conf.first_name }} {{ inter_colleg_baseb_conf.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all (current) players in the American Conference of Amateur Football with last name "Lopez"</p>
+		<ul>
+			{% for lopez_player in lopez_players %}
+			<li>{{ lopez_player.first_name }} {{ lopez_player.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all football players</p>
+		<ul>
+			{% for football_player in football_players %}
+			<li>{{ football_player.first_name }} {{ football_player.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams with a (current) player named "Sophia"</p>
+		<ul>
+			{% for sophia_team in sophia_teams %}
+			<li>{{ sophia_team.location }} {{ sophia_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all leagues with a (current) player named "Sophia"</p>
+		<ul>
+			{% for sophia_league in sophia_leagues %}
+			<li>{{ sophia_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...everyone with the last name "Flores" who DOESN'T (currently) play for the Washington Roughriders</p>
+		<ul>
+			{% for flores_player in flores_players %}
+			<li>{{ flores_player.first_name }} {{ flores_player.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams, past and present, that Samuel Evans has played with</p>
+		<ul>
+			{% for samuel_evans_team in samuel_evans_teams %}
+			<li>{{ samuel_evans_team.location }} {{ samuel_evans_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all players, past and present, with the Manitoba Tiger-Cats</p>
+		<ul>
+			{% for tiger_cats_player in tiger_cats_players %}
+			<li>{{ tiger_cats_player.first_name }} {{ tiger_cats_player.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all players who were formerly (but aren't currently) with the Wichita Vikings</p>
+		<ul>
+			{% for vikings_player in vikings_players %}
+			<li>{{ vikings_player.first_name }} {{ vikings_player.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...every team that Jacob Gray played for before he joined the Oregon Colts</p>
+		<ul>
+			{% for jacob_gray_team in jacob_gray_teams %}
+			<li>{{ jacob_gray_team.location }} {{ jacob_gray_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...everyone named "Joshua" who has ever played in the Atlantic Federation of Amateur Baseball Players</p>
+		<ul>
+			{% for amateur_baseball_joshua in amateur_baseball_joshuas %}
+			<li>{{ amateur_baseball_joshua.first_name }} {{ amateur_baseball_joshua.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams that have had 12 or more players, past and present. (HINT: Look up the Django annotate function.)</p>
+		<ul>
+			<li></li>
+		</ul>
+		<br>
+		<p>...all players and count of teams played for, sorted by the number of teams they've played for</p>
+		<ul>
+			<li></li>
 		</ul>
 		<br>
 	</body>
