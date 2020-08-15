@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-from django.db.models import Q
+from django.db.models import Q, Count
 from .models import League, Team, Player
 
 from . import team_maker
 
 def index(request):
+	# Team.objects.annotate(num_players=Count('all_players'))
 	context = {
 		"leagues": League.objects.all(),
 		"teams": Team.objects.all(),
@@ -38,6 +39,8 @@ def index(request):
 		"vikings_players": Player.objects.filter(all_teams__location__exact="Wichita",all_teams__team_name__exact="Vikings").exclude(curr_team__location__exact="Wichita",curr_team__team_name__exact="Vikings"),
 		"jacob_gray_teams": Team.objects.filter(all_players__first_name__exact="Jacob",all_players__last_name__exact="Gray").exclude(location__exact="Oregon", team_name__exact="Colts"),
 		"amateur_baseball_joshuas": Player.objects.filter(all_teams__league__name__exact="Atlantic Federation of Amateur Baseball Players", first_name__exact="Joshua"),
+		"12_or_mores": Team.objects.annotate(num_players=Count('all_players')).filter(num_players__gte=12),
+		"all_players": Player.objects.annotate(num_teams=Count('all_teams')).order_by("num_teams")
 	}
 	return render(request, "leagues/index.html", context)
 

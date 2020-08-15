@@ -237,12 +237,16 @@
 		<br>
 		<p>...all teams that have had 12 or more players, past and present. (HINT: Look up the Django annotate function.)</p>
 		<ul>
-			<li></li>
+			{% for 12_or_more in 12_or_mores %}
+			<li>{{ 12_or_more.location }} {{ 12_or_more.team_name }}</li>
+			{% endfor %}
 		</ul>
 		<br>
 		<p>...all players and count of teams played for, sorted by the number of teams they've played for</p>
 		<ul>
-			<li></li>
+			{% for all_player in all_players %}
+			<li>{{ all_player.first_name }} {{ all_player.last_name }} - {{ all_player.num_teams }} teams</li>
+			{% endfor %}
 		</ul>
 		<br>
 	</body>
