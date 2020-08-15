@@ -140,6 +140,30 @@ function updateInventory(newInv, currentInv) {
   
   function isAnagram(str1, str2) {
     // your code here
+    if (str1.length != str2.length){
+      return false;
+    }
+    var str1Obj = freqTable(str1);
+    var str2Obj = freqTable(str2);
+    for (key in str1Obj){
+      if(str1Obj[key] != str2Obj[key]){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function freqTable(str) {
+    var obj = {};
+    for (var i=0; i<str.length; i++){
+        if(obj.hasOwnProperty(str[i])){
+            obj[str[i]] += 1;
+        }
+        else{
+            obj[str[i]] = 1;
+        }
+    }
+    return obj
   }
   
   console.log(isAnagram('Yes', 'eYs')); // should log true
