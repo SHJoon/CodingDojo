@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sports Leagues</title>
+	</head>
+	<body>
+		<h1>Leagues</h1>
+		<ol>
+			{% for league in leagues %}
+				<li>{{league.name}}</li>
+			{% empty %}
+				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h1>Teams</h1>
+		<ol>
+			{% for team in teams %}
+				<li>{{team.location}} {{team.team_name}}</li>
+			{% empty %}
+				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h1>Players</h1>
+		<ol>
+			{% for player in players %}
+				<li>{{player.first_name}} {{player.last_name}}</li>
+			{% empty %}
+				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<p>...all baseball leagues</p>
+		<ul>
+			{% for baseball_league in baseball_leagues %}
+			<li>{{ baseball_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all womens' leagues</p>
+		<ul>
+			{% for womens_league in womens_leagues %}
+			<li>{{ womens_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all leagues where sport is any type of hockey</p>
+		<ul>
+			{% for hockey_league in hockey_leagues %}
+			<li>{{ hockey_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all leagues where sport is something OTHER THAN football</p>
+		<ul>
+			{% for not_football_league in not_football_leagues %}
+			<li>{{ not_football_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all leagues that call themselves "conferences"</p>
+		<ul>
+			{% for conference_league in conference_leagues %}
+			<li>{{ conference_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all leagues in the Atlantic region</p>
+		<ul>
+			{% for atlantic_league in atlantic_leagues %}
+			<li>{{ atlantic_league.name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams based in Dallas</p>
+		<ul>
+			{% for dallas_team in dallas_teams %}
+			<li>{{ dallas_team.location }} {{ dallas_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams named the Raptors</p>
+		<ul>
+			{% for raptors_team in raptors_teams %}
+			<li>{{ raptors_team.location }} {{ raptors_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams whose location includes "City"</p>
+		<ul>
+			{% for city_team in city_teams %}
+			<li>{{ city_team.location }} {{ city_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams whose names begin with "T"</p>
+		<ul>
+			{% for t_team in t_teams %}
+			<li>{{ t_team.location }} {{ t_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams, ordered alphabetically by location</p>
+		<ul>
+			{% for alphabet_team in alphabet_teams %}
+			<li>{{ alphabet_team.location }} {{ alphabet_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all teams, ordered by team name in reverse alphabetical order</p>
+		<ul>
+			{% for reverse_team in reverse_teams %}
+			<li>{{ reverse_team.location }} {{ reverse_team.team_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...every player with last name "Cooper"</p>
+		<ul>
+			{% for cooper in coopers %}
+			<li>{{ cooper.first_name }} {{ cooper.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...every player with first name "Joshua"</p>
+		<ul>
+			{% for joshua in joshuas %}
+			<li>{{ joshua.first_name }} {{ joshua.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</p>
+		<ul>
+			{% for cooper_no_joshua in coopers_no_joshua %}
+			<li>{{ cooper_no_joshua.first_name }} {{ cooper_no_joshua.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+		<p>...all players with first name "Alexander" OR first name "Wyatt"</p>
+		<ul>
+			{% for alexander_wyatt in alexander_wyatts %}
+			<li>{{ alexander_wyatt.first_name }} {{ alexander_wyatt.last_name }}</li>
+			{% endfor %}
+		</ul>
+		<br>
+	</body>
+</html>
