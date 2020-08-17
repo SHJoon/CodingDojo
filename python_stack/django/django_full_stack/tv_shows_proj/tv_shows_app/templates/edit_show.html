@@ -11,6 +11,13 @@
     <div id="container">
         <h1>Edit Show</h1>
         <a href='/shows'>Go Back</a>
+        {% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
         <form action="/shows/{{ show.id }}/update" method="POST">
             {% csrf_token %}
             <h3>Title</h3>
@@ -20,7 +27,7 @@
             <h3>Release Date</h3>
             <input type="date" name="release_date" value= {{ show.release_date }}>
             <h3>Description</h3>
-            <input type="text" name="desc" id='desc' col=30 row=10 value= {{ show.description }}>
+            <input type="text" name="desc" id='desc' value= {{ show.description }}>
             <button>Update</button>
         </form>
 

@@ -16,7 +16,10 @@
         <p>Release Date: {{ show.release_date }}</p>
         <p>Description: {{ show.description }}</p>
     </div>
-
-    <footer>Last Updated: {{ show.updated_at }} </footer>
+    <br>
+    <p>Last Updated: {{ show.updated_at }} </p>
+    <p>
+        <a href='/shows/{{ show.id }}/edit'>Edit</a> | <a href='/shows/{{ show.id }}/destroy'>Delete</a>
+    </p>
 </body>
 </html>
