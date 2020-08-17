@@ -31,17 +31,20 @@ function balancePoint(arr) {
         var rightSum = 0;
         var leftSum = 0;
 
+        // This loop adds up all numbers on left side
         for (var j = i; j >= 0; j--){
             leftSum += arr[j];
         }
+        // This loop adds up all numbers on right side
         for (var k = i + 1; k <arr.length; k++){
             rightSum += arr[k];
         }
-        
+        // Compare each side
         if (leftSum == rightSum){
             return true;
         }
     }
+    // Returns false if the leftSum and rightSum never equaled each other
     return false;
 }
 
@@ -80,17 +83,20 @@ function balanceIndex(arr) {
     for (var i = 0; i < arr.length; i++){
         var leftSum = 0;
         var rightSum = 0;
+        // This loop adds up all numbers on left side of the index
         for (var j = i - 1; j >= 0; j--){
             leftSum += arr[j];
         }
+        // This loop adds up all numbers on right side of the index
         for (var k = i + 1; k < arr.length; k++){      
             rightSum += arr[k];
         }
-        
+        // Compare each side
         if (leftSum == rightSum){
             return i;
         }
     }
+    // Returns -1 if the leftSum and rightSum never equaled each other
     return -1;
 }
 
