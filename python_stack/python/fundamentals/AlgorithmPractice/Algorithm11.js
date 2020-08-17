@@ -27,24 +27,18 @@ j               2
 
 function balancePoint(arr) {
     // your code here
-    for (var i = 0; i < arr.length; i++){
-        var rightSum = 0;
-        var leftSum = 0;
-
-        // This loop adds up all numbers on left side
-        for (var j = i; j >= 0; j--){
-            leftSum += arr[j];
-        }
-        // This loop adds up all numbers on right side
-        for (var k = i + 1; k <arr.length; k++){
-            rightSum += arr[k];
-        }
-        // Compare each side
-        if (leftSum == rightSum){
+    var leftSum = arr[0];
+    var rightSum = 0;
+    for (var i = 1; i < arr.length; i++){      
+        rightSum += arr[i];
+    }
+    for(var j = 1; j < arr.length; j++){
+        if(leftSum == rightSum){
             return true;
         }
+        leftSum += arr[j];
+        rightSum -= arr[j+1];
     }
-    // Returns false if the leftSum and rightSum never equaled each other
     return false;
 }
 
@@ -80,9 +74,12 @@ k           1->2
 
 function balanceIndex(arr) {
     // your code here
-    for (var i = 0; i < arr.length; i++){
-        var leftSum = 0;
-        var rightSum = 0;
+    var leftSum = 0;
+    var rightSum = 0;
+    for (var b = 0; b < arr.length; b++){
+        rightSum += arr[b];
+    }
+    for (var i = 1; i < arr.length; i++){
         // This loop adds up all numbers on left side of the index
         for (var j = i - 1; j >= 0; j--){
             leftSum += arr[j];
@@ -95,6 +92,29 @@ function balanceIndex(arr) {
         if (leftSum == rightSum){
             return i;
         }
+    }
+    // Returns -1 if the leftSum and rightSum never equaled each other
+    return -1;
+}
+
+console.log(balanceIndex([-2, 5, 7, 0, 3])); // should log 2
+console.log(balanceIndex([9, 9])); // should log -1
+
+
+function balanceIndex(arr) {
+    // your code here
+    var leftSum = 0;
+    var rightSum = 0;
+    for (var i = 1; i < arr.length; i++){
+        rightSum += arr[i];
+    }
+
+    for (var j = 1; j < arr.length; j++){
+        if (leftSum == rightSum){
+            return i;
+        }
+        leftSum += arr[j - 1];
+        rightSum -= arr[j + 1];
     }
     // Returns -1 if the leftSum and rightSum never equaled each other
     return -1;
