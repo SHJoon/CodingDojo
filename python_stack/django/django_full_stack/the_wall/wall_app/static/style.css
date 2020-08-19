@@ -1,0 +1,48 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#container{
+    width:900px;
+}
+
+#header{
+    width: 886px;
+    padding: 4px;
+    border-bottom: solid 2px black;
+}
+#header *{
+    display: inline-block;
+}
+#header p{
+    margin-left: 400px;
+}
+#header a{
+    margin-left: 50px;
+}
+
+
+#main-content{
+    width: 900px;
+    padding: 50px;
+}
+
+#msg input{
+    width: 700px;
+    height: 50px;
+    border: solid 3px black;
+}
+#msg button {
+    margin-top: 5px;
+    margin-left: 601px;
+    padding:2px;
+    color: white;
+    background-color: rgb(43,120,228);
+    box-shadow: 2px 3px;
+}
+/* 
+.msg-content {
+    font-size: 20px;
+} */

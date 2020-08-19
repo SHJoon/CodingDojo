@@ -20,12 +20,17 @@ def register_user(request):
     password = request.POST['registered_password']
     pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
     
-    created_user = Users.objects.create(
-        first_name = request.POST['registered_first_name'],
-        last_name = request.POST['registered_last_name'],
-        email = request.POST['registered_email'],
-        password = pw_hash
-    )
+    try:
+        created_user = Users.objects.create(
+            first_name = request.POST['registered_first_name'],
+            last_name = request.POST['registered_last_name'],
+            email = request.POST['registered_email'],
+            password = pw_hash
+        )
+    except:
+        messages.error(request, "You can't use that email address.")
+        return redirect("/login")
+        
     request.session['user_id'] = created_user.id
 
     return redirect('/')
@@ -35,6 +40,7 @@ def login_user(request):
     user_list = Users.objects.filter(email=request.POST['login_email'])
     if len(user_list) == 0:
         messages.error(request, "Please check your email/password")
+        return redirect("/login")
 
     if not bcrypt.checkpw(request.POST['login_password'].encode(), user_list[0].password.encode()):
         print("failed password")

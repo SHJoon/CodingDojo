@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     <div id="container">
@@ -22,24 +24,24 @@
             </form>
 
             {% for msg in all_messages reversed %}
-            <div id="message-block">
-                <p style="font-weight: bold;">{{ msg.user.first_name }} {{ msg.user.last_name }} - {{ msg.created_at }}</p>
-                <ul>
-                    <li>{{ msg.message }}</li>
-                    {% for cmt in msg.comments.all %}
-                    <ul>
-                        <li style="font-weight: bold;">{{ cmt.user.first_name }} {{ cmt.user.last_name }} - {{ cmt.created_at }}</li>
-                        <li>{{ cmt.comment }}</li>
-                    </ul>
-                    {% endfor %}
-                    <form id="post-comment" action='/cmt' method=POST>
-                        {% csrf_token %}
-                        <p>Post a comment</p>
-                        <input type="text" name="new_comment">
-                        <input type="hidden" name="msg_id" value={{msg.id}}>
-                        <button>Post a message</button>
-                    </form>
-                </ul>
+            <div id="content-block">
+                <div class="msg-block">
+                    <p style="font-weight: bold;">{{ msg.user.first_name }} {{ msg.user.last_name }} - {{ msg.created_at }}</p>
+                    <p class="">{{ msg.message }}</p>
+                </div>
+                {% for cmt in msg.comments.all %}
+                <div class="comment-block">
+                    <p style="font-weight: bold;">{{ cmt.user.first_name }} {{ cmt.user.last_name }} - {{ cmt.created_at }}</p>
+                    <p>{{ cmt.comment }}</p>
+                </div>
+                {% endfor %}
+                <form id="post-comment" action='/cmt' method=POST>
+                    {% csrf_token %}
+                    <p>Post a comment</p>
+                    <input type="text" name="new_comment">
+                    <input type="hidden" name="msg_id" value={{msg.id}}>
+                    <button>Post a message</button>
+                </form>
             </div>
             {% endfor %}
         </div>
