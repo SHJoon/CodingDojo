@@ -27,7 +27,7 @@
             <div id="content-block">
                 <div class="msg-block">
                     <p style="font-weight: bold;">{{ msg.user.first_name }} {{ msg.user.last_name }} - {{ msg.created_at }}</p>
-                    <p class="">{{ msg.message }}</p>
+                    <p class="msg-content">{{ msg.message }}</p>
                 </div>
                 {% for cmt in msg.comments.all %}
                 <div class="comment-block">
