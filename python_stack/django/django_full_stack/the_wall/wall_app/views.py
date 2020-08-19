@@ -15,7 +15,7 @@ def register_user(request):
     if len(all_errors) > 0:
         for _, val in all_errors.items():
             messages.error(request, val)
-        return redirect('/login')
+        return redirect('/')
 
     password = request.POST['registered_password']
     pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
@@ -29,7 +29,7 @@ def register_user(request):
         )
     except:
         messages.error(request, "You can't use that email address.")
-        return redirect("/login")
+        return redirect("/")
         
     request.session['user_id'] = created_user.id
 
@@ -40,25 +40,25 @@ def login_user(request):
     user_list = Users.objects.filter(email=request.POST['login_email'])
     if len(user_list) == 0:
         messages.error(request, "Please check your email/password")
-        return redirect("/login")
+        return redirect("/")
 
     if not bcrypt.checkpw(request.POST['login_password'].encode(), user_list[0].password.encode()):
         print("failed password")
         messages.error(request, "Please check your email/password")
-        return redirect("/login")
+        return redirect("/")
 
     request.session['user_id'] = user_list[0].id    
-    return redirect("/")
+    return redirect("/the_wall")
 
 def logout(request):
     request.session.clear()
-    return redirect("/login")
+    return redirect("/")
 
 # Functions for the wall
 def index(request):
     if 'user_id' not in request.session:
         messages.error(request, "You must be logged in to view that page.")
-        return redirect("/login")
+        return redirect("/")
     
     context={
         "user": Users.objects.get(id=request.session['user_id']),
@@ -75,7 +75,7 @@ def create_message(request):
         user = logged_in_user
     )
 
-    return redirect("/")
+    return redirect("/the_wall")
 
 def create_comment(request):
     logged_in_user = Users.objects.get(id=request.session['user_id'])
@@ -85,4 +85,9 @@ def create_comment(request):
         message = Messages.objects.get(id=request.POST['msg_id'])
     )
 
-    return redirect("/")
+    return redirect("/the_wall")
+
+def delete_comment(request, cmt_id):
+    Comments.objects.get(id=cmt_id).delete()
+
+    return redirect("/the_wall")

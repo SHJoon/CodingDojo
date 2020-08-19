@@ -4,21 +4,22 @@
 }
 #container {
     width:900px;
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .messages {
     width: 805px;
     background-color: lightyellow;
     font-size: 20px;
-}
-#register, #login {
-    display:inline-block;
-    vertical-align: top;
+    list-style: none;
 }
 
 #register, #login{
     width: 300px;
     height: 400px;
     padding: 0px 50px;
+    display:inline-block;
+    vertical-align: top;
     background-color: lightblue;
 }
 #login {

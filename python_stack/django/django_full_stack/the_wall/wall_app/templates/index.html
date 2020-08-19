@@ -19,7 +19,9 @@
             <form id="msg" action='/msg' method=POST>
                 {% csrf_token %}
                 <h3>Post a message</h3>
-                <input type="text" name="new_message">
+                <textarea name="new_message"></textarea>
+                <!-- <input type="textarea" name="new_message"> -->
+                <!-- <textarea name="new_message"></textarea>-->
                 <button>Post a message</button>
             </form>
 
@@ -29,18 +31,25 @@
                     <p style="font-weight: bold;">{{ msg.user.first_name }} {{ msg.user.last_name }} - {{ msg.created_at }}</p>
                     <p class="msg-content">{{ msg.message }}</p>
                 </div>
-                {% for cmt in msg.comments.all %}
-                <div class="comment-block">
-                    <p style="font-weight: bold;">{{ cmt.user.first_name }} {{ cmt.user.last_name }} - {{ cmt.created_at }}</p>
-                    <p>{{ cmt.comment }}</p>
+                <div id="block-of-comments">
+                    {% for cmt in msg.comments.all %}
+                    <div class="comment-block">
+                        <p style="font-weight: bold;">
+                            {{ cmt.user.first_name }} {{ cmt.user.last_name }} - {{ cmt.created_at }}
+                            {% if user.id == cmt.user.id %}
+                            <a href='/cmt/{{ cmt.id }}/delete'>Delete comment</a>
+                            {% endif %}
+                        </p>
+                        <p>{{ cmt.comment }}</p>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
-                <form id="post-comment" action='/cmt' method=POST>
+                <form class="post-comment" action='/cmt' method=POST>
                     {% csrf_token %}
                     <p>Post a comment</p>
-                    <input type="text" name="new_comment">
+                    <textarea name="new_comment"></textarea>
                     <input type="hidden" name="msg_id" value={{msg.id}}>
-                    <button>Post a message</button>
+                    <button>Post a comment</button>
                 </form>
             </div>
             {% endfor %}

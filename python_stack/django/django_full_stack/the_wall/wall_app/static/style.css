@@ -1,15 +1,18 @@
 *{
     margin:0px;
     padding:0px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #container{
-    width:900px;
+    width:800px;
+    margin: auto;
+    background-color: rgb(197, 234, 246);
+    border: solid 1px black;
 }
 
 #header{
-    width: 886px;
+    width: 792px;
     padding: 4px;
     border-bottom: solid 2px black;
 }
@@ -17,32 +20,71 @@
     display: inline-block;
 }
 #header p{
-    margin-left: 400px;
+    margin-left: 300px;
 }
 #header a{
     margin-left: 50px;
 }
 
-
+#content-block {
+    width: 700px;
+    background-color: rgb(182, 240, 182);
+    margin-top: 5px;
+    padding: 5px;
+    border: solid 2px black;
+}
 #main-content{
-    width: 900px;
+    width: 100%;
     padding: 50px;
 }
 
-#msg input{
+#msg textarea{
     width: 700px;
     height: 50px;
     border: solid 3px black;
+    padding: 2px;
 }
 #msg button {
     margin-top: 5px;
     margin-left: 601px;
+    margin-bottom: 10px;
     padding:2px;
     color: white;
     background-color: rgb(43,120,228);
-    box-shadow: 2px 3px;
+    box-shadow: 2px 3px black;
 }
-/* 
+
 .msg-content {
-    font-size: 20px;
-} */
+    margin-left: 10px;
+}
+
+.msg-block{
+    margin-bottom: 8px;
+}
+
+#block-of-comments{
+    width: 655px;
+    background-color: rgb(255, 215, 221);
+    margin-left: 20px;
+}
+.comment-block, .post-comment {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.post-comment {
+    margin-left: 20px;
+}
+.post-comment textarea {
+    width: 650px;
+    height: 40px;
+    padding: 2px;
+    border: solid 3px black;
+}
+.post-comment button {
+    margin-left: 544px;
+    margin-bottom: 5px;
+    padding: 2px;
+    color: white;
+    background-color: green;
+    box-shadow: 2px 3px black;
+}
