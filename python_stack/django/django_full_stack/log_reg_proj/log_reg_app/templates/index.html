@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+</head>
+<body>
+    <div id="container">
+        <form id="register" action='/create' method="POST">
+            {% csrf_token %}
+            <h1>Registration</h1>
+            {% for error in messages %}
+            <p style="color:red">{{ error }}</p>
+            {% endfor %}
+
+
+            <table>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="registered_first_name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="registered_last_name"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="registered_email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="registered_password"></td>
+                </tr>
+                <tr>
+                    <td>Confirm PW</td>
+                    <td><input type="password" name="registered_confirm_pw"></td>
+                </tr>
+            </table>
+            <button>Register</button>
+        </form>
+
+        <form id="login" action='/login' method="POST">
+            {%csrf_token%}
+            <h1>Login</h1>
+            <table>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="login_email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="login_password"></td>
+                </tr> 
+            </table>
+            <button>Log In</button>
+        </form>
+    </div>
+</body>
+</html>
