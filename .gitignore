@@ -1,1 +1,7 @@
 .vscode
+env/
+djangoPy3Env/
+venv/
+__pycache__/
+.vscode/
+db.sqlite3
