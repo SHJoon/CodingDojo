@@ -63,7 +63,6 @@ def index(request):
     context={
         "user": Users.objects.get(id=request.session['user_id']),
         "all_messages": Messages.objects.all(),
-        "all_comments": Comments.objects.all(),
     }
 
     return render(request, 'index.html', context)
