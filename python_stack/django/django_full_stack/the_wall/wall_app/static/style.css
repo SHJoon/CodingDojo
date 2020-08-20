@@ -43,6 +43,7 @@
     height: 50px;
     border: solid 3px black;
     padding: 2px;
+    resize: none;
 }
 #msg button {
     margin-top: 5px;
@@ -79,6 +80,7 @@
     height: 40px;
     padding: 2px;
     border: solid 3px black;
+    resize: none;
 }
 .post-comment button {
     margin-left: 544px;
