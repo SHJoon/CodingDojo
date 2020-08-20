@@ -12,14 +12,14 @@ function coinChange(cents) {
     // newObj['quarters'] = 0 -> newObj = {'quarters': 0}
 
     var num_quarters = Math.floor(cents / 25);
-    var remainder = cents - (25 * num_quarters);
+    var remainder = cents % 25;
 
     var num_dimes = Math.floor(remainder / 10);
-    remainder = remainder - (10 * num_dimes);
+    remainder = remainder % 10;
 
     var num_nickels = Math.floor(remainder / 5);
 
-    var num_pennies = remainder - (5 * num_nickels);
+    var num_pennies = remainder % 5;
     
     newObj['quarters'] = num_quarters;
     newObj['dimes'] = num_dimes;
@@ -39,6 +39,7 @@ function coinChange(cents) {
 
   function coinChange(cents){
       var coinArr = [25, 10, 5, 1];
+      var coinArr = [{'name':'quarters', 'amount':25}]
 
   }
   
@@ -61,6 +62,7 @@ function coinChange(cents) {
     // your code here
 
     // Sort the input array
+    // Selection sort
     for(var i = 0; i < arr.length; i++){
         var min_idx = i;
         for(var j = i; j < arr.length; j++){
@@ -75,7 +77,7 @@ function coinChange(cents) {
     }
 
     // With the sorted array, find if there is missing gap
-    for(var i = 0; i < arr.length; i++){
+    for(var i = 0; i < arr.length - 1; i++){
         if(arr[i + 1] - arr[i] == 2){
             return arr[i] + 1;
         }
