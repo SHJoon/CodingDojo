@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="container">
-        <form id="register" action='/create' method="POST">
+        <form id="register" action='/register' method="POST">
             {% csrf_token %}
             <h1>Registration</h1>
             {% for error in messages %}

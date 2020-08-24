@@ -26,14 +26,14 @@
                 <form action="/books/{{ book.id }}/edit" method=POST>
                     {% csrf_token %}
                     <input type="text" name="title" value="{{ book.title }}" style="font-size:20px;">
-                {% else %}
+                    {% else %}
                     <h2>{{ book.title }}</h2>
-                {% endif %}
+                    {% endif %}
                     <p>Added by: {{ book.uploaded_by.first_name }} {{ book.uploaded_by.last_name }}</p>
                     <p>Added on: {{ book.created_at }}</p>
                     <p>Last updated on: {{ book.updated_at }}</p>
                     <p>Description:</p>
-                {% if logged_user == book.uploaded_by %}
+                    {% if logged_user == book.uploaded_by %}
                     <input type="text" name="desc" value="{{ book.desc }}" style="font-size:20px;">
                     <button>Update</button>
                 </form>
@@ -41,7 +41,7 @@
                     {% csrf_token %}
                     <button>Delete</button>
                 </form>
-                {% else %}
+                    {% else %}
                     <p>Description: {{ book.desc }}</p>
                 {% endif %}
             </div>
