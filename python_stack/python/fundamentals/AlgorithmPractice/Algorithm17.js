@@ -32,13 +32,17 @@ function binarySearch(sortedArr, searchVal) {
 // forward movement
 
 function rBinarySearch(sortedArr, searchVal) {
+    // base case
+    if(sortedArr.length == 0){
+        return false;
+    }
+
     var lowInd = 0;
     var highInd = sortedArr.length - 1;
     var midInd = Math.floor((lowInd + highInd) / 2);
     
     // base case
     if (searchVal == sortedArr[midInd]) return true;
-    else if(lowInd > highInd) return false;
 
     if(searchVal > sortedArr[midInd]){
         lowInd = midInd + 1;
