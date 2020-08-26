@@ -24,7 +24,9 @@ function factorial(num) {
     return mult;
 }
 
-
+  // base case: to stop the recursion (preventing an infinite loop)
+  // recursive call (the function calls itself inside the body)
+  // forward movement: bringing us closer to the base case
 
 function rFactorial(num) {
     // your code here
@@ -32,7 +34,7 @@ function rFactorial(num) {
     if(num == 0){
         return 1;
     }
-
+    
     return num * rFactorial(num - 1);
 
 //  return 5   * rFactorial(num - 1);
