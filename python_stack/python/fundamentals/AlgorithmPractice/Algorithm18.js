@@ -4,22 +4,16 @@
  * sum all the digits until the answer has only ONE DIGIT
  */
 
- function sumToOneDigit(num){
-    var sum = 0
-    while(sum.toString().length > 1){
-        var strNumLen = num.toString().length
-        for (var i = 0; i < strNumLen; i++){
-        sum += parseInt(strNum[i]);
-        }
-    }
-    return sum;
- }
-
 function rSumToOneDigit(num) {
     // base case
     if (num.toString().length == 1){
-        return num
+        return num;
     }
+    var sum = 0;
+    for (var i = 0; i < num.toString().length; i++){
+        sum += parseInt(num.toString()[i]);
+    }
+    return rSumToOneDigit(sum);
   }
   
   console.log(rSumToOneDigit(19));
@@ -46,7 +40,15 @@ function rSumToOneDigit(num) {
    */
   
   function stringAnagrams(str, anagrams = [], partial = '') {
-    // your code here
+    var startP = 0, endP = startP + 2;
+    for (var i = 1; i < str.length; i++ ){
+      partial = str.slice(i,i+2);
+      
+    }
+    var remainder = str.slice(2);
+    anagrams[0] = partial[1] + partial[0] + remainder; //im
+    anagrams[1] = partial[0] + partial[1] + remainder; //mi
+    return anagrams;
   }
   
   // 'something'.slice(2, 4) returns a new string 'me'
@@ -57,3 +59,19 @@ function rSumToOneDigit(num) {
   
   console.log(stringAnagrams('mil'));
   // should log ['mil', 'mli', 'iml', 'ilm', 'lim', 'lmi']
+  //             123     132    213    231    321    312
+  // 1234
+  // 1234  1243  1324  1423 2134 2143 4123 
+  // milk
+  // str.slice(2) -> lk
+  //str.slice(0,2);
+  // 4!
+  // 4 x 3 x 2 x 1
+  // mi, lk
+  //anagrams = ["imlk", "milk"]
+  
+function stringAnagrams(str, anagrams = [], partial = ''){
+    for(var i = 0; i < partial.length; i++){
+        
+    }
+}
