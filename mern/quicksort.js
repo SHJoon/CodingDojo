@@ -8,7 +8,7 @@ function partition(arr, left, right){
             i++;
         }
 
-        while(arr[j] < pivot_val){
+        while(arr[j] > pivot_val){
             j--;
         }
 
