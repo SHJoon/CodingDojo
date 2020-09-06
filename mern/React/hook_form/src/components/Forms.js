@@ -26,7 +26,7 @@ const Forms = (props) =>{
 
         setFirstName(newFirst);
 
-        if (newFirst.length < 2 && newFirst.length != 0){
+        if (newFirst.length < 2 && newFirst.length !== 0){
             setIsFirstNameValid(false);
         }
         else{
@@ -39,7 +39,7 @@ const Forms = (props) =>{
 
         setLastName(newLast);
 
-        if (newLast.length < 2 && newLast.length != 0){
+        if (newLast.length < 2 && newLast.length !== 0){
             setIsLastNameValid(false);
         }
         else{
@@ -52,7 +52,7 @@ const Forms = (props) =>{
 
         setEmail(newEmail);
 
-        if (newEmail.length < 5 && newEmail.length != 0){
+        if (newEmail.length < 5 && newEmail.length !== 0){
             setIsEmailValid(false);
         }
         else{
@@ -65,7 +65,7 @@ const Forms = (props) =>{
 
         setPassword(newPassword);
 
-        if (newPassword.length < 8 && newPassword.length != 0){
+        if (newPassword.length < 8 && newPassword.length !== 0){
             setIsPasswordValid(false);
         }
         else{
@@ -78,7 +78,7 @@ const Forms = (props) =>{
 
         setConfirm(newConfirm);
 
-        if (newConfirm != password && newConfirm.length != 0){
+        if (newConfirm != password && newConfirm.length !== 0){
             setIsConfirmValid(false);
         }
         else{
