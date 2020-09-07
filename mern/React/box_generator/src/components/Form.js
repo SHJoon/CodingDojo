@@ -14,7 +14,6 @@ const Form = (props) =>{
             length: length
         };
         setInputs([...inputs, newBox]);
-        console.log(inputs);
         
         setColor("");
         setLength(0);
