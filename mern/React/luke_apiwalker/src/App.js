@@ -8,16 +8,16 @@ import Results from './views/Results';
 import NotFound from './views/NotFound';
 
 function App() {
-  const [data, setData] = useState({});
-
+  const [name, setName] = useState("");
   const [display, setDisplay] = useState({});
+  const [homeworld, setHomeworld] = useState({});
 
   return (
     <div className="App">
-      <Search display={display} setDisplay={setDisplay} />
+      <Search display={display} setDisplay={setDisplay} homeworld={homeworld} setHomeworld={setHomeworld} name={name} setName={setName} />
       <Router>
         <Home path="/" />
-        <Results path="/:category/:id" display={display} setDisplay={setDisplay} />
+        <Results path="/:category/:id" display={display} homeworld = {homeworld} name={name}/>
         <NotFound path="/notfound" display={display} setDisplay={setDisplay} />
       </Router>
     </div>

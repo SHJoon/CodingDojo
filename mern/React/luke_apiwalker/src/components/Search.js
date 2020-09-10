@@ -6,7 +6,7 @@ import { navigate } from '@reach/router';
 const Search = (props) => {
     // const {setData, isSubmitted, setIsSubmitted} = props;
 
-    const {display, setDisplay} = props;
+    const {setDisplay, setHomeworld, setName} = props;
 
     const searchOptions = [
         "people",
@@ -22,18 +22,26 @@ const Search = (props) => {
             axios.get(`https://swapi.dev/api/${selectedSearch}/${searchIdx}`)
             .then(response =>{
                 if (selectedSearch==="people"){
-                    setDisplay({
-                        name: response.data.name,
+                    setName(response.data.name);
+                    const copiedResponse = {
                         Height: response.data.height,
                         Gender: response.data.gender,
-                        Mass: response.data.mass,
+                        mass: response.data.mass,
                         "Hair Color": response.data.hair_color,
-                    }
-                    );
+                    };
+                    axios.get(response.data.homeworld)
+                    .then(homeResponse => {
+                        setHomeworld(homeResponse.data);
+                    })
+                    .catch(err => {
+                        console.log("error response:", err);
+                        navigate("/notfound");
+                    });
+                    setDisplay(copiedResponse);
                 }
                 else if (selectedSearch==="planets"){
+                    setName(response.data.name);
                     setDisplay({
-                        name: response.data.name,
                         "Rotation Period": response.data.rotation_period,
                         "Orbital Period": response.data.orbital_period,
                         Gravity: response.data.gravity,
@@ -42,8 +50,8 @@ const Search = (props) => {
                     );
                 }
                 else if (selectedSearch==="films"){
+                    setName(response.data.name);
                     setDisplay({
-                        name: response.data.title,
                         "Episode Id": response.data.episode_id,
                         Director: response.data.director,
                         Producer: response.data.producer,
