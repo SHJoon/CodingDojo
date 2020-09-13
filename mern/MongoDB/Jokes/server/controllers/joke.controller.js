@@ -1,7 +1,7 @@
 const Joke = require("../models/joke.model");
 
 module.exports = {
-    getAll( res) {
+    getAll(req, res) {
         Joke.find()
         .then((jokes) => {
             res.json(jokes);
@@ -23,8 +23,18 @@ module.exports = {
 
     create(req, res) {
         Joke.create(req.body)
-        .then((city) => {
-            res.json(city);
+        .then((joke) => {
+            res.json(joke);
+        })
+        .catch((err) => {
+            res.json(err);
+        })
+    },
+
+    randomJoke(req, res) {
+        Joke.aggregate([{$sample: {size: 1}}])
+        .then((joke) => {
+            res.json(joke);
         })
         .catch((err) => {
             res.json(err);
@@ -36,8 +46,8 @@ module.exports = {
             runValidators: true,
             new: true,
         })
-        .then((city) => {
-            res.json(city);
+        .then((joke) => {
+            res.json(joke);
         })
         .catch((err) => {
             res.json(err);
@@ -46,8 +56,8 @@ module.exports = {
 
     delete(req, res) {
         Joke.findByIdAndRemove(req.params.id)
-        .then((city) => {
-            res.json(city);
+        .then((joke) => {
+            res.json(joke);
         })
         .catch((err) => {
             res.json(err);
