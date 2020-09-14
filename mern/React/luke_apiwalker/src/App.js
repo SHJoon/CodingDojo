@@ -18,7 +18,7 @@ function App() {
       <Router>
         <Home path="/" />
         <Results path="/:category/:id" display={display} homeworld = {homeworld} name={name}/>
-        <NotFound path="/notfound" display={display} setDisplay={setDisplay} />
+        <NotFound />
       </Router>
     </div>
   );
