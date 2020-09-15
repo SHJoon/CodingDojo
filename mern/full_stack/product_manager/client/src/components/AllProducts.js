@@ -11,14 +11,29 @@ const AllProducts = (props) => {
         .catch((err) => console.log(err));
     }, [products]);
 
+    const handleDelete = (delId) => {
+        axios.delete(`http://localhost:8000/api/products/${delId}`)
+        .then((res) => {
+            const filteredProducts = products.filter((product) => {
+                return product._id !== delId;
+            })
+            setProducts(filteredProducts);
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+    }
+
     return(
         <div>
             <hr></hr>
             <h1>All Products</h1>
-            {products.map((product, i) => {
+            {products.map((product) => {
                 return(
-                <div key={i}>
+                <div key={product._id}>
+                <hr></hr>
                 <Link to={`/${product._id}`}>{product.title}</Link>
+                <button onClick={(e) => {handleDelete(product._id)}} >Delete</button>
                 </div>
                 )
             })}
