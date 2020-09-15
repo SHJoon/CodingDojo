@@ -1,11 +1,17 @@
 import React from 'react';
 import './App.css';
-import ProductForm from './components/ProductForm';
+import { Router } from '@reach/router';
+
+import ProductForm from './views/ProductForm';
+import SingleProduct from './views/SingleProduct';
 
 function App() {
   return (
     <div className="App">
-      <ProductForm />
+      <Router>
+        <ProductForm path="/" />
+        <SingleProduct path="/:productId" />
+      </Router>
     </div>
   );
 }
