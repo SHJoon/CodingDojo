@@ -3,13 +3,14 @@ import axios from 'axios';
 import { Link } from '@reach/router';
 
 const AllProducts = (props) => {
-    const [ products, setProducts ] = useState([]);
+    const { products, setProducts } = props;
+    // const [ products, setProducts ] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products')
         .then((res) => setProducts(res.data))
         .catch((err) => console.log(err));
-    }, [products]);
+    }, []);
 
     const handleDelete = (delId) => {
         axios.delete(`http://localhost:8000/api/products/${delId}`)

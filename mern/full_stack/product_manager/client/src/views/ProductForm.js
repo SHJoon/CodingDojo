@@ -6,16 +6,18 @@ const PersonForm = (props) => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
+    const [ products, setProducts ] = useState([]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post("http://localhost:8000/api/products/create", {
+        const newProduct = {
             title,
             price,
             description
-        })
-        .then( res => console.log(res))
+        }
+        axios.post("http://localhost:8000/api/products/create", newProduct)
+        .then( res => setProducts([...products, res.data]))
         .catch( err => console.log(err));
     }
 
@@ -37,7 +39,7 @@ const PersonForm = (props) => {
                 </div>
                 <input type="submit" value="Create" />
             </form>
-            <AllProducts />
+            <AllProducts products={products} setProducts={setProducts} />
         </div>
     );
 }
