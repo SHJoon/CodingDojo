@@ -4,12 +4,10 @@ public class Project {
     private double initialCost;
 
     public String elevatorPitch() {
-        return String.format("%s (%s): %s", name, initialCost, description);
+        return String.format("%s (%.2f): %s", name, initialCost, description);
     }
 
-    public Project() {
-        
-    }
+    public Project() {}
 
     public Project(String name) {
         this.name = name;
@@ -32,7 +30,7 @@ public class Project {
         return description;
     }
 
-    public void setDescription() {
+    public void setDescription(String description) {
         this.description = description;
     }
 
