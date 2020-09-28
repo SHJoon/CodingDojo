@@ -36,7 +36,7 @@ public class SinglyLinkedList {
     public Node find(int value) {
         Node runner = head;
         while (runner != null) {
-            if(runner.value = value) {
+            if(runner.value == value) {
                 return runner;
             }
             else {
@@ -47,10 +47,17 @@ public class SinglyLinkedList {
     }
 
     public void removeAt(int n) {
-        Node runner = head;
-        for(int i = 0; i < n; i++) {
-            runner = runner.next;
+        if (n == 0) {
+            head = head.next;
         }
-
+        else {
+            Node runner = head;
+            int count = 1;
+            while (count < n) {
+                runner = runner.next;
+                count++;
+            }
+            runner.next = runner.next.next;
+        }
     }
 }
