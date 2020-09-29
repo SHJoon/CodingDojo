@@ -1,3 +1,4 @@
+package com.oopfundamentals;
 
 public class Mammal {
 	public int energyLevel = 100;
