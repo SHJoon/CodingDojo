@@ -27,7 +27,7 @@ public class DateController {
 	public String time(Model model) {
 		Date date = new Date();
 		
-		model.addAttribute("currTime", String.format("%tI:%<tM %<tp", date));
+		model.addAttribute("currTime", String.format("%tI:%<tM %<Tp", date));
 		return "time.jsp";
 	}
 	
