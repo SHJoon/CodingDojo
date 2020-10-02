@@ -11,5 +11,6 @@
 <body>
 	<h1>You have visited <a href="/">http://localhost:8080</a> <c:out value="${ count }"/> times</h1>
 	<a href="/">Test another visit?</a>
+	<a href="/reset"><button>Reset counter</button></a>
 </body>
 </html>

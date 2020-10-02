@@ -45,5 +45,11 @@ public class CounterController {
 		session.setAttribute("count", currCount);
 		return "double.jsp"; 
 	}
+	
+	@RequestMapping("/reset")
+	public String resetCount(HttpSession session) {
+		session.setAttribute("count", 0);
+		return "redirect:/counter";
+	}
 
 }
