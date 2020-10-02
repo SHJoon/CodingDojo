@@ -19,6 +19,7 @@ public class HumanTest {
 		
 		n1.steal(s1);
 		n1.displayHealth();
+		s1.displayHealth();
 		
 		w1.heal(w1);
 		w1.displayHealth();

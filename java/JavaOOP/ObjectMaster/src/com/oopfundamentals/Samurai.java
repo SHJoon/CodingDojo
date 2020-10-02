@@ -20,4 +20,8 @@ public class Samurai extends Human {
 	public int howMany() {
 		return samuraiCount;
 	}
+	
+	public void displayHealth() {
+		System.out.println(health);
+	}
 }
