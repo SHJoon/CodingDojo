@@ -46,7 +46,7 @@
 		<div id="activity">
 			<p> Activities: </p>
 			<div id="activity-box">
-				<c:forEach items="${ logs.reverse() }" var="log">
+				<c:forEach items="${ logs }" var="log">
 					<p class=${log.get(1)}> ${log.get(0)}</p>
 				</c:forEach>
 			</div>
