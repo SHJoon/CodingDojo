@@ -36,19 +36,19 @@
 		</table>
 		<form:form action="/languages" method="POST" modelAttribute="language">
 			<div>
-				<form:label path="name">Name</form:label>
-				<form:errors path="name"/>
-				<form:input path="name"/>
+				<p><form:label path="name">Name</form:label></p>
+				<p><form:errors path="name"/></p>
+				<p><form:input path="name"/></p>
 			</div>
 			<div>
-				<form:label path="creator">Creator</form:label>
-				<form:errors path="creator"/>
-				<form:input path="creator"/>
+				<p><form:label path="creator">Creator</form:label></p>
+				<p><form:errors path="creator"/></p>
+				<p><form:input path="creator"/></p>
 			</div>
 			<div>
-				<form:label path="version">Version</form:label>
-				<form:errors path="version"/>
-				<form:input path="version"/>
+				<p><form:label path="version">Version</form:label></p>
+				<p><form:errors path="version"/></p>
+				<p><form:input path="version"/></p>
 			</div>
 			<input type="submit" value="Submit">
 		</form:form>

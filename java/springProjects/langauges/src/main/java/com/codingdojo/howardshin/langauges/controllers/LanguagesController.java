@@ -32,13 +32,15 @@ public class LanguagesController {
 	
 	@RequestMapping("/languages/new")
 	public String newLanguage(@ModelAttribute("language") Language lang) {
-		return "/languages/new.jsp";
+		return "/languages/index.jsp";
 	}
 	
 	@RequestMapping(value="/languages", method=RequestMethod.POST)
-	public String create(@Valid @ModelAttribute("language") Language lang, BindingResult result) {
+	public String create(@Valid @ModelAttribute("language") Language lang, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "/languages/new.jsp";
+			List<Language> langs = languageService.allLanguages();
+			model.addAttribute("languages", langs);
+			return "/languages/index.jsp";
 		} else {
 			languageService.createLanguage(lang);
 			return "redirect:/languages";

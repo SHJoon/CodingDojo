@@ -24,7 +24,7 @@ public class Language {
 	private String name;
 	@Size(min = 2, max = 20)
 	private String creator;
-	@Size(min = 1)
+	@Size(min = 1, message="The version is required.")
 	private String version;
 	
 	@Column(updatable=false)
