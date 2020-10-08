@@ -1,4 +1,4 @@
-package com.codingdojo.howardshin.langauges.models;
+package com.codingdojo.howardshin.lookify.models;
 
 import java.util.Date;
 
@@ -10,22 +10,27 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="languages")
-public class Language {
+@Table(name="songs")
+public class Song {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Size(min = 2, max = 20)
-	private String name;
-	@Size(min = 2, max = 20)
-	private String creator;
-	@Size(min = 1, message="The version is required.")
-	private String version;
+	@Size(min = 5, message = "The title must be at least 5 characters.")
+	private String title;
+	@Size(min = 5, message = "The artist name must be at least 5 characters.")
+	private String artist;
+	@NotNull(message= "Rating may not be empty")
+	@Min(value = 1, message = "Minimum rating is 1.")
+	@Max(value = 10, message = "Maximum rating is 10.")
+	private Integer rating;
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -33,12 +38,12 @@ public class Language {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
-	public Language() {}
+	public Song() {}
 	
-	public Language(String name, String creator, String version) {
-		this.name = name;
-		this.creator = creator;
-		this.version = version;
+	public Song(String title, String artist, Integer rating) {
+		this.title = title;
+		this.artist = artist;
+		this.rating = rating;
 	}
 	
 	@PrePersist
@@ -49,41 +54,52 @@ public class Language {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public void setArtist(String artist) {
+		this.artist = artist;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getCreator() {
-		return creator;
-	}
-	public void setCreator(String creator) {
-		this.creator = creator;
-	}
-	public String getVersion() {
-		return version;
-	}
-	public void setVersion(String version) {
-		this.version = version;
-	}
-	
 }
